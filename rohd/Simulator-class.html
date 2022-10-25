@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../"
-      data-using-base-href="false">
+<body data-base-href="../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -54,14 +53,19 @@
   <p>A functional event-based static simulator for logic behavior.</p>
 <p>Each tick of the simulator steps through the following events and phases:</p>
 <ul>
-<li><a href="../rohd/Simulator/preTick.html">preTick</a>                   (event): Occurs at the very start of a tick, before anything else occurs.
+<li><a href="../rohd/Simulator/preTick.html">preTick</a>                   (event): Occurs at the very start of a tick,
+                                     before anything else occurs.
                                      This is useful for flop sampling.</li>
 <li><a href="../rohd/SimulatorPhase.html">SimulatorPhase.beforeTick</a> (phase)</li>
-<li><a href="../rohd/Simulator/startTick.html">startTick</a>                 (event): The beginning of the "meat" of the tick.</li>
-<li><a href="../rohd/SimulatorPhase.html">SimulatorPhase.mainTick</a>   (phase): Most events happen here, lots of glitches.</li>
-<li><a href="../rohd/Simulator/clkStable.html">clkStable</a>                 (event): All glitchiness has completed, clocks should be stable now.</li>
+<li><a href="../rohd/Simulator/startTick.html">startTick</a>                 (event): The beginning of the "meat" of the
+                                     tick.</li>
+<li><a href="../rohd/SimulatorPhase.html">SimulatorPhase.mainTick</a>   (phase): Most events happen here, lots of
+                                     glitches.</li>
+<li><a href="../rohd/Simulator/clkStable.html">clkStable</a>                 (event): All glitchiness has completed, clocks
+                                     should be stable now.</li>
 <li><a href="../rohd/SimulatorPhase.html">SimulatorPhase.clkStable</a>  (phase)</li>
-<li><a href="../rohd/Simulator/postTick.html">postTick</a>                  (event): The tick has completed, all values should be settled.</li>
+<li><a href="../rohd/Simulator/postTick.html">postTick</a>                  (event): The tick has completed, all values
+                                     should be settled.</li>
 <li><a href="../rohd/SimulatorPhase.html">SimulatorPhase.outOfTick</a>  (phase): Not during an active simulator tick.</li>
 </ul>
 <p>Functional behavior modelling subscribes to <a href="../rohd/Simulator-class.html">Simulator</a> events and/or queries the <a href="../rohd/SimulatorPhase.html">SimulatorPhase</a>.</p>
@@ -88,8 +92,8 @@
 
       <dl class="properties">
         <dt id="hashCode" class="property inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/int-class.html">int</a></span> 
+  <span class="name"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/int-class.html">int</a></span> 
 
 </dt>
 <dd class="inherited">
@@ -99,8 +103,8 @@
 </dd>
 
         <dt id="runtimeType" class="property inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/Type-class.html">Type</a></span> 
+  <span class="name"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/Type-class.html">Type</a></span> 
 
 </dt>
 <dd class="inherited">
@@ -119,7 +123,7 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="noSuchMethod" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+  <span class="name"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
@@ -132,8 +136,8 @@
 </dd>
 
         <dt id="toString" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>
+  <span class="name"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>
   </span>
   
 
@@ -153,8 +157,8 @@
     <h2>Operators</h2>
     <dl class="callables">
         <dt id="operator ==" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/bool-class.html">bool</a></span>
+  <span class="name"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/bool-class.html">bool</a></span>
   </span>
   
 
@@ -174,7 +178,7 @@
     <dl class="properties">
         <dt id="clkStable" class="property">
   <span class="name"><a href="../rohd/Simulator/clkStable.html">clkStable</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Stream-class.html">Stream</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -185,7 +189,7 @@
 
         <dt id="logger" class="property">
   <span class="name"><a href="../rohd/Simulator/logger.html">logger</a></span>
-  <span class="signature">&#8594; <a href="https://pub.dev/documentation/logging/1.0.2/logging/Logger-class.html">Logger</a></span> 
+  <span class="signature">&#8594; <a href="https://pub.dev/documentation/logging/1.1.0/logging/Logger-class.html">Logger</a></span> 
 
 </dt>
 <dd>
@@ -207,7 +211,7 @@
 
         <dt id="postTick" class="property">
   <span class="name"><a href="../rohd/Simulator/postTick.html">postTick</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Stream-class.html">Stream</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -218,7 +222,7 @@
 
         <dt id="preTick" class="property">
   <span class="name"><a href="../rohd/Simulator/preTick.html">preTick</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Stream-class.html">Stream</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -229,7 +233,7 @@
 
         <dt id="simulationEnded" class="property">
   <span class="name"><a href="../rohd/Simulator/simulationEnded.html">simulationEnded</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Future-class.html">Future</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -240,7 +244,7 @@
 
         <dt id="simulationHasEnded" class="property">
   <span class="name"><a href="../rohd/Simulator/simulationHasEnded.html">simulationHasEnded</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/bool-class.html">bool</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/bool-class.html">bool</a></span> 
 
 </dt>
 <dd>
@@ -251,7 +255,7 @@
 
         <dt id="startTick" class="property">
   <span class="name"><a href="../rohd/Simulator/startTick.html">startTick</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Stream-class.html">Stream</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -262,7 +266,7 @@
 
         <dt id="time" class="property">
   <span class="name"><a href="../rohd/Simulator/time.html">time</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/int-class.html">int</a></span> 
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/int-class.html">int</a></span> 
 
 </dt>
 <dd>
@@ -285,14 +289,15 @@
 
 </dt>
 <dd>
-  Halts the simulation.  Allows the current <a href="../rohd/Simulator/tick.html">tick</a> to finish, if there is one.
+  Halts the simulation.  Allows the current <a href="../rohd/Simulator/tick.html">tick</a> to finish, if there
+is one.
   
 
 </dd>
 
         <dt id="hasStepsRemaining" class="callable">
   <span class="name"><a href="../rohd/Simulator/hasStepsRemaining.html">hasStepsRemaining</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-core/bool-class.html">bool</a></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-core/bool-class.html">bool</a></span>
   </span>
   
 
@@ -311,14 +316,14 @@
 
 </dt>
 <dd>
-  Adds an arbitrary <code>action</code> to be executed as soon as possible, during the current
-simulation tick if possible.
+  Adds an arbitrary <code>action</code> to be executed as soon as possible, during the
+current simulation tick if possible.
   
 
 </dd>
 
         <dt id="registerAction" class="callable">
-  <span class="name"><a href="../rohd/Simulator/registerAction.html">registerAction</a></span><span class="signature">(<wbr><span class="parameter" id="registerAction-param-timestamp"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">timestamp</span>, </span><span class="parameter" id="registerAction-param-action"><span class="type-annotation">void</span> <span class="parameter-name">action</span>()</span>)
+  <span class="name"><a href="../rohd/Simulator/registerAction.html">registerAction</a></span><span class="signature">(<wbr><span class="parameter" id="registerAction-param-timestamp"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/int-class.html">int</a></span> <span class="parameter-name">timestamp</span>, </span><span class="parameter" id="registerAction-param-action"><span class="type-annotation">void</span> <span class="parameter-name">action</span>()</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -330,9 +335,23 @@ simulation tick if possible.
 
 </dd>
 
+        <dt id="registerEndOfSimulationAction" class="callable">
+  <span class="name"><a href="../rohd/Simulator/registerEndOfSimulationAction.html">registerEndOfSimulationAction</a></span><span class="signature">(<wbr><span class="parameter" id="registerEndOfSimulationAction-param-action"><span class="type-annotation">dynamic</span> <span class="parameter-name">action</span>()</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Registers an arbitrary <code>action</code> to be executed at the end of the
+simulation.
+  
+
+</dd>
+
         <dt id="reset" class="callable">
   <span class="name"><a href="../rohd/Simulator/reset.html">reset</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
@@ -345,7 +364,7 @@ simulation tick if possible.
 
         <dt id="run" class="callable">
   <span class="name"><a href="../rohd/Simulator/run.html">run</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
@@ -358,21 +377,22 @@ it finishes or is stopped.
 </dd>
 
         <dt id="setMaxSimTime" class="callable">
-  <span class="name"><a href="../rohd/Simulator/setMaxSimTime.html">setMaxSimTime</a></span><span class="signature">(<wbr><span class="parameter" id="setMaxSimTime-param-newMaxSimTime"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">newMaxSimTime</span></span>)
+  <span class="name"><a href="../rohd/Simulator/setMaxSimTime.html">setMaxSimTime</a></span><span class="signature">(<wbr><span class="parameter" id="setMaxSimTime-param-newMaxSimTime"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/int-class.html">int</a></span> <span class="parameter-name">newMaxSimTime</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
 <dd>
-  Sets a time, after which, the <a href="../rohd/Simulator-class.html">Simulator</a> will halt processing of new actions.
+  Sets a time, after which, the <a href="../rohd/Simulator-class.html">Simulator</a> will halt processing of new
+actions.
   
 
 </dd>
 
         <dt id="tick" class="callable">
   <span class="name"><a href="../rohd/Simulator/tick.html">tick</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
@@ -385,7 +405,7 @@ it finishes or is stopped.
 
         <dt id="tickExecute" class="callable">
   <span class="name"><a href="../rohd/Simulator/tickExecute.html">tickExecute</a></span><span class="signature">(<wbr><span class="parameter" id="tickExecute-param-toExecute"><span class="type-annotation">void</span> <span class="parameter-name">toExecute</span>()</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
@@ -488,6 +508,7 @@ it finishes or is stopped.
 
   <li class="section-title"><a href="../rohd/rohd-library.html#functions">Functions</a></li>
   <li><a href="../rohd/bin.html">bin</a></li>
+  <li><a href="../rohd/mux.html">mux</a></li>
   <li><a class="deprecated" href="../rohd/rswizzle.html">rswizzle</a></li>
   <li><a class="deprecated" href="../rohd/swizzle.html">swizzle</a></li>
 
@@ -516,15 +537,15 @@ it finishes or is stopped.
     <li class="section-title inherited">
       <a href="../rohd/Simulator-class.html#instance-properties">Properties</a>
     </li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/hashCode.html">hashCode</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
     <li class="section-title inherited"><a href="../rohd/Simulator-class.html#instance-methods">Methods</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../rohd/Simulator-class.html#operators">Operators</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
         <li class="section-title"><a href="../rohd/Simulator-class.html#static-properties">Static properties</a></li>
@@ -543,6 +564,7 @@ it finishes or is stopped.
           <li><a href="../rohd/Simulator/hasStepsRemaining.html">hasStepsRemaining</a></li>
           <li><a href="../rohd/Simulator/injectAction.html">injectAction</a></li>
           <li><a href="../rohd/Simulator/registerAction.html">registerAction</a></li>
+          <li><a href="../rohd/Simulator/registerEndOfSimulationAction.html">registerEndOfSimulationAction</a></li>
           <li><a href="../rohd/Simulator/reset.html">reset</a></li>
           <li><a href="../rohd/Simulator/run.html">run</a></li>
           <li><a href="../rohd/Simulator/setMaxSimTime.html">setMaxSimTime</a></li>
@@ -558,7 +580,7 @@ it finishes or is stopped.
 <footer>
   <span class="no-break">
     rohd
-      0.3.1
+      0.4.0
   </span>
 
   
@@ -567,7 +589,7 @@ it finishes or is stopped.
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
-<script src="../static-assets/script.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
 
 
 

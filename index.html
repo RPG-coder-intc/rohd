@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 5.1.0-dev">
+  <meta name="generator" content="made with love by dartdoc 6.0.0">
   <meta name="description" content="rohd API docs, for the Dart programming language.">
   <title>rohd - Dart API docs</title>
 
@@ -22,8 +22,7 @@
 </head>
 
 
-<body data-base-href=""
-      data-using-base-href="false">
+<body data-base-href="" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -44,8 +43,9 @@
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
-  <p><a href="https://github.com/intel/rohd/actions/workflows/test.yml"><img src="https://github.com/intel/rohd/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
-<a href="https://intel.github.io/rohd/rohd/rohd-library.html"><img src="https://github.com/intel/rohd/actions/workflows/docs.yml/badge.svg" alt="Docs"></a>
+  <p><a href="https://github.com/intel/rohd/actions/workflows/general.yml"><img src="https://github.com/intel/rohd/actions/workflows/general.yml/badge.svg?event=push" alt="Tests"></a>
+<a href="https://intel.github.io/rohd/rohd/rohd-library.html"><img src="https://img.shields.io/badge/API%20Docs-generated-success" alt="API Docs"></a>
+<a href="https://discord.gg/jubxF84yGw"><img src="https://img.shields.io/discord/1001179329411166267?label=Chat" alt="Chat"></a>
 <a href="https://github.com/intel/rohd/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-blue" alt="License"></a>
 <a href="https://github.com/intel/rohd/blob/main/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-1.4-4baaaa.svg" alt="Contributor Covenant"></a></p>
 <h1 id="rapid-open-hardware-development-rohd-framework">Rapid Open Hardware Development (ROHD) Framework</h1>
@@ -109,7 +109,7 @@
 <pre class="language-dart"><code class="language-dart">import 'package:rohd/rohd.dart';
 </code></pre>
 <p>There are complete API docs available at <a href="https://intel.github.io/rohd/rohd/rohd-library.html">https://intel.github.io/rohd/rohd/rohd-library.html</a>.</p>
-<p>If you need some help, you can visit our <a href="https://github.com/intel/rohd/discussions">Discussions</a> page.  This is a friendly place where you can ask questions, share ideas, or just discuss openly!  You could also head to <a href="https://stackoverflow.com/">StackOverflow.com</a> (use the tag <code>rohd</code>) to ask questions or look for answers.</p>
+<p>If you need some help, you can join the <a href="https://discord.com/invite/jubxF84yGw">Discord server</a> or visit our <a href="https://github.com/intel/rohd/discussions">Discussions</a> page.  These are friendly places where you can ask questions, share ideas, or just discuss openly!  You could also head to <a href="https://stackoverflow.com/">StackOverflow.com</a> (use the tag <code>rohd</code>) to ask questions or look for answers.</p>
 <p>You also may be interested to join the <a href="https://github.com/intel/rohd/wiki/ROHD-Forum">ROHD Forum</a> periodic meetings with other users and developers in the ROHD community.  The meetings are open to anyone interested!</p>
 <p>Be sure to note the minimum Dart version required for ROHD specified in pubspec.yaml (at least 2.14.0).  If you're using the version of Dart that came with Flutter, it might be older than that.</p>
 <h2 id="package-managers-for-hardware">Package Managers for Hardware</h2>
@@ -238,6 +238,7 @@ a_lt_b    &lt;=  a.lt(b)  // less than             NOTE: &lt;  is for conditiona
 a_lte_b   &lt;=  a.lte(b) // less than or equal    NOTE: &lt;= is for assignment
 a_gt_b    &lt;=  (a &gt; b)  // greater than          NOTE: careful with order of operations, &gt; needs parentheses in this case
 a_gte_b   &lt;=  (a &gt;= b) // greater than or equal NOTE: careful with order of operations, &gt;= needs parentheses in this case
+answer    &lt;=  mux(selectA, a, b) // answer = selectA ? a : b
 </code></pre>
 <h3 id="shift-operations">Shift Operations</h3>
 <p>Dart has <a href="https://github.com/dart-lang/language/blob/master/accepted/2.14/triple-shift-operator/feature-specification.md">implemented the triple shift</a> operator (&gt;&gt;&gt;) in the opposite way as is <a href="https://www.nandland.com/verilog/examples/example-shift-operator-verilog.html">implemented in SystemVerilog</a>.  That is to say in Dart, &gt;&gt;&gt; means <em>logical</em> shift right (fill with 0's), and &gt;&gt; means <em>arithmetic</em> shift right (maintaining sign).  ROHD keeps consistency with Dart's implementation to avoid introducing confusion within Dart code you write (whether ROHD or plain Dart).</p>
@@ -499,45 +500,50 @@ a.inject(LogicValue.x);
 <p>Note: changing a value directly with <code>put()</code> will propogate the value, but it will not trigger flip-flop edge detection or cosim interaction.</p>
 <h3 id="custom-module-behavior-with-custom-in-line-systemverilog-representation">Custom module behavior with custom in-line SystemVerilog representation</h3>
 <p>Many of the basic built-in gates in Dart implement custom behavior.  An implementation of the NotGate is shown below as an example.  There is different syntax for functions which can be inlined versus those which cannot (the ~ can be inlined).  In this case, the <code>InlineSystemVerilog</code> mixin is used, but if it were not inlineable, you could use <code>CustomSystemVerilog</code>.  Note that it is mandatory to provide an initial value computation when the module is first created for non-sequential modules.</p>
-<pre class="language-dart"><code class="language-dart">class NotGate extends Module with InlineSystemVerilog {
+<pre class="language-dart"><code class="language-dart">/// A gate [Module] that performs bit-wise inversion.
+class NotGate extends Module with InlineSystemVerilog {
+  /// Name for the input of this inverter.
+  late final String _inName;
 
-  /// Name for a port of this module. 
-  late final String _a, _out;
-  
+  /// Name for the output of this inverter.
+  late final String _outName;
+
   /// The input to this [NotGate].
-  Logic get a =&gt; input(_a);
+  Logic get _in =&gt; input(_inName);
 
   /// The output of this [NotGate].
-  Logic get out =&gt; output(_out);
+  Logic get out =&gt; output(_outName);
 
-  NotGate(Logic a, {String name = 'not'}) : super(name: name) {
-    _a = Module.unpreferredName(a.name);
-    _out = Module.unpreferredName('${a.name}_b');
-    addInput(_a, a, width: a.width);
-    addOutput(_out, width: a.width);
+  /// Constructs a [NotGate] with [in_] as its input.
+  ///
+  /// You can optionally set [name] to name this [Module].
+  NotGate(Logic in_, {super.name = 'not'}) {
+    _inName = Module.unpreferredName(in_.name);
+    _outName = Module.unpreferredName('${in_.name}_b');
+    addInput(_inName, in_, width: in_.width);
+    addOutput(_outName, width: in_.width);
     _setup();
   }
 
   /// Performs setup steps for custom functional behavior.
   void _setup() {
     _execute(); // for initial values
-
-    // Custom behavior should subscribe to 'glitch'
-    a.glitch.listen((args) {
+    _in.glitch.listen((args) {
       _execute();
     });
   }
 
   /// Executes the functional behavior of this gate.
   void _execute() {
-    out.put(~a.value);
+    out.put(~_in.value);
   }
 
-  // specify how to convert this behavior to Verilog
   @override
-  String inlineVerilog(Map&lt;String,String&gt; inputs) {
-    if(inputs.length != 1) throw Exception('Gate has exactly one input.');
-    var a = inputs[_a]!;
+  String inlineVerilog(Map&lt;String, String&gt; inputs) {
+    if (inputs.length != 1) {
+      throw Exception('Gate has exactly one input.');
+    }
+    final a = inputs[_inName]!;
     return '~$a';
   }
 }
@@ -645,7 +651,7 @@ var b = pipeline.get(a);
 <li>To add an action to the Simulator in the <em>current</em> timestep, use <code>Simulator.injectAction</code>.</li>
 </ul>
 <h2 id="instantiation-of-external-modules">Instantiation of External Modules</h2>
-<p>ROHD can instantiate external SystemVerilog modules.  The <a href="https://intel.github.io/rohd/rohd/ExternalSystemVerilogModule-class.html"><code>ExternalSystemVerilogModule</code></a> constructor requires the top level SystemVerilog module name.  When ROHD generates SystemVerilog for a model containing an <code>ExternalSystemVerilogModule</code>, it will instantiate instances of the specified <code>topModuleName</code>.  This is useful for integration related activities.</p>
+<p>ROHD can instantiate external SystemVerilog modules.  The <a href="https://intel.github.io/rohd/rohd/ExternalSystemVerilogModule-class.html"><code>ExternalSystemVerilogModule</code></a> constructor requires the top level SystemVerilog module name.  When ROHD generates SystemVerilog for a model containing an <code>ExternalSystemVerilogModule</code>, it will instantiate instances of the specified <code>definitionName</code>.  This is useful for integration related activities.</p>
 <p>There is an upcoming package for SystemVerilog cosimulation with ROHD which adds cosimulation capabilities to an <code>ExternalSystemVerilogModule</code> planned for release soon.</p>
 <h2 id="unit-testing">Unit Testing</h2>
 <p>Dart has a great unit testing package available on pub.dev: <a href="https://pub.dev/packages/test">https://pub.dev/packages/test</a></p>
@@ -680,7 +686,7 @@ var b = pipeline.get(a);
 <h3 id="chisel">Chisel</h3>
 <p>Chisel is a domain specific language (DSL) built on top of <a href="https://www.scala-lang.org/">Scala</a>, which is built on top of the Java virtual machine (JVM).  The goals of Chisel are somewhat aligned with the goals of ROHD.  Chisel can also convert to SystemVerilog.</p>
 <ul>
-<li>The syntax of Scala (and thus Chisel) is probably less familiar-feeling to most hardware engineers, and is arguably more verbose and subjectively uglier than ROHD with Dart.</li>
+<li>The syntax of Scala (and thus Chisel) is probably less familiar-feeling to most hardware engineers, and it can be more verbose than ROHD with Dart.</li>
 <li>Scala and the JVM are arguably less user friendly to debug than Dart code.</li>
 <li>Chisel is focused mostly on the hardware <em>designer</em> rather than the <em>validator</em>.  Many of the design choices for the language are centered around making it easier to parameterize and synthesize logic.  ROHD was created with validators in mind.</li>
 <li>Chisel generates logic that's closer to a netlist than what a similar implementation in SystemVerilog would look like.  This can make it difficult to debug or validate generated code.  ROHD generates structurally similar SystemVerilog that looks close to how you might write it.</li>
@@ -771,7 +777,7 @@ SPDX-License-Identifier: BSD-3-Clause
 <footer>
   <span class="no-break">
     rohd
-      0.3.1
+      0.4.0
   </span>
 
   
@@ -780,7 +786,7 @@ SPDX-License-Identifier: BSD-3-Clause
 
 
 <script src="static-assets/highlight.pack.js?v1"></script>
-<script src="static-assets/script.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
 
 
 

@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -53,7 +52,7 @@
       
 
 <span class="returntype"><a href="../../rohd/Logic-class.html">Logic</a></span>
-<span class="name ">operator []</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="[]-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span></li>
+<span class="name ">operator []</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="[]-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span></li>
 </ol>)
 
       
@@ -62,15 +61,27 @@
     
 <section class="desc markdown">
   <p>Accesses the <code>index</code>th bit of this signal.</p>
+<p>Negative/Positive index values are allowed. (The negative indexing starts from the end=<a href="../../rohd/Logic/width.html">width</a>-1)
+-(<a href="../../rohd/Logic/width.html">width</a>) &lt;= <code>index</code> &lt; <a href="../../rohd/Logic/width.html">width</a></p>
+<pre class="language-dart"><code class="language-dart">Logic nextVal = addOutput('nextVal', width: width);
+// Example: val = 0xce, val.width = 8, bin(0xce) = "0b11001110"
+// Positive Indexing
+nextVal &lt;= val[3]; // output: 1
+
+// Negative Indexing
+nextVal &lt;= val[-5]; // output: 1, also val[3] == val[-5]
+
+// Error cases
+nextVal &lt;= val[-9]; // Error!: allowed values [-8, 7]
+nextVal &lt;= val[8]; // Error!: allowed values [-8, 7]
+</code></pre>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Logic operator [](int index) {
-  return slice(index, index);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">Logic operator [](int index) =&gt; slice(index, index);</code></pre>
 </section>
 
 
@@ -105,7 +116,7 @@
     <li><a href="../../rohd/Logic/changed.html">changed</a></li>
     <li><a href="../../rohd/Logic/dstConnections.html">dstConnections</a></li>
     <li><a href="../../rohd/Logic/glitch.html">glitch</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/hashCode.html">hashCode</a></li>
     <li><a href="../../rohd/Logic/isInput.html">isInput</a></li>
     <li><a href="../../rohd/Logic/isOutput.html">isOutput</a></li>
     <li><a href="../../rohd/Logic/isPort.html">isPort</a></li>
@@ -117,7 +128,7 @@
     <li><a href="../../rohd/Logic/parentModule.html">parentModule</a></li>
     <li><a href="../../rohd/Logic/posedge.html">posedge</a></li>
     <li><a href="../../rohd/Logic/reversed.html">reversed</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/runtimeType.html">runtimeType</a></li>
     <li><a href="../../rohd/Logic/srcConnection.html">srcConnection</a></li>
     <li><a href="../../rohd/Logic/value.html">value</a></li>
     <li><a class="deprecated" href="../../rohd/Logic/valueBigInt.html">valueBigInt</a></li>
@@ -135,7 +146,7 @@
     <li><a href="../../rohd/Logic/lt.html">lt</a></li>
     <li><a href="../../rohd/Logic/lte.html">lte</a></li>
     <li><a href="../../rohd/Logic/makeUnassignable.html">makeUnassignable</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../rohd/Logic/or.html">or</a></li>
     <li><a href="../../rohd/Logic/put.html">put</a></li>
     <li><a href="../../rohd/Logic/signExtend.html">signExtend</a></li>
@@ -155,7 +166,7 @@
     <li><a href="../../rohd/Logic/operator_less.html">operator <</a></li>
     <li><a href="../../rohd/Logic/operator_shift_left.html">operator <<</a></li>
     <li><a href="../../rohd/Logic/operator_less_equal.html">operator <=</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/operator_equals.html">operator ==</a></li>
     <li><a href="../../rohd/Logic/operator_greater.html">operator ></a></li>
     <li><a href="../../rohd/Logic/operator_greater_equal.html">operator >=</a></li>
     <li><a href="../../rohd/Logic/operator_shift_right.html">operator >></a></li>
@@ -180,7 +191,7 @@
 <footer>
   <span class="no-break">
     rohd
-      0.3.1
+      0.4.0
   </span>
 
   
@@ -189,7 +200,7 @@
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

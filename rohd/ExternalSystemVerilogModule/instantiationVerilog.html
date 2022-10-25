@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -53,15 +52,15 @@
       
 <div>
   <ol class="annotation-list">
-    <li>@<a href="https://api.dart.dev/stable/2.17.5/dart-core/override-constant.html">override</a></li>
+    <li>@<a href="https://api.dart.dev/stable/2.18.3/dart-core/override-constant.html">override</a></li>
   </ol>
 </div>
 
-<span class="returntype"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>
-<span class="name ">instantiationVerilog</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="instantiationVerilog-param-instanceType"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">instanceType</span>, </span></li>
-<li><span class="parameter" id="instantiationVerilog-param-instanceName"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">instanceName</span>, </span></li>
-<li><span class="parameter" id="instantiationVerilog-param-inputs"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">inputs</span>, </span></li>
-<li><span class="parameter" id="instantiationVerilog-param-outputs"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.5/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">outputs</span></span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>
+<span class="name ">instantiationVerilog</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="instantiationVerilog-param-instanceType"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">instanceType</span>, </span></li>
+<li><span class="parameter" id="instantiationVerilog-param-instanceName"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">instanceName</span>, </span></li>
+<li><span class="parameter" id="instantiationVerilog-param-inputs"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">inputs</span>, </span></li>
+<li><span class="parameter" id="instantiationVerilog-param-outputs"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.18.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">outputs</span></span></li>
 </ol>)
 
       <div class="features">override</div>
@@ -69,11 +68,13 @@
     </section>
     
 <section class="desc markdown">
-  <p>Generates custom SystemVerilog to be injected in place of a <code>module</code> instantiation.</p>
-<p>The <code>instanceType</code> and <code>instanceName</code> represent the type and name, respectively of
-the module that would have been instantiated had it not been overridden.  The <a href="https://api.dart.dev/stable/2.17.5/dart-core/Map-class.html">Map</a>s
-<code>inputs</code> and <code>outputs</code> are a mapping from the <a href="../../rohd/Module-class.html">Module</a>'s port names to the names of
-the signals that are passed into those ports in the generated SystemVerilog.</p>
+  <p>Generates custom SystemVerilog to be injected in place of a <code>module</code>
+instantiation.</p>
+<p>The <code>instanceType</code> and <code>instanceName</code> represent the type and name,
+respectively of the module that would have been instantiated had it not
+been overridden.  The <a href="https://api.dart.dev/stable/2.18.3/dart-core/Map-class.html">Map</a>s <code>inputs</code> and <code>outputs</code> are a mapping from the
+<a href="../../rohd/Module-class.html">Module</a>'s port names to the names of the signals that are passed into
+those ports in the generated SystemVerilog.</p>
 </section>
 
 
@@ -82,11 +83,10 @@ the signals that are passed into those ports in the generated SystemVerilog.</p>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 String instantiationVerilog(String instanceType, String instanceName,
-    Map&lt;String, String&gt; inputs, Map&lt;String, String&gt; outputs) {
-  return SystemVerilogSynthesizer.instantiationVerilogWithParameters(
-      this, topModuleName, instanceName, inputs, outputs,
-      parameters: parameters, forceStandardInstantiation: true);
-}</code></pre>
+        Map&lt;String, String&gt; inputs, Map&lt;String, String&gt; outputs) =&gt;
+    SystemVerilogSynthesizer.instantiationVerilogWithParameters(
+        this, definitionName, instanceName, inputs, outputs,
+        parameters: parameters, forceStandardInstantiation: true);</code></pre>
 </section>
 
 
@@ -119,7 +119,7 @@ String instantiationVerilog(String instanceType, String instanceName,
     </li>
     <li class="inherited"><a href="../../rohd/Module/definitionName.html">definitionName</a></li>
     <li class="inherited"><a href="../../rohd/Module/hasBuilt.html">hasBuilt</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="../../rohd/Module/inputs.html">inputs</a></li>
     <li class="inherited"><a href="../../rohd/Module/internalSignals.html">internalSignals</a></li>
     <li class="inherited"><a href="../../rohd/Module/name.html">name</a></li>
@@ -128,10 +128,9 @@ String instantiationVerilog(String instanceType, String instanceName,
     <li class="inherited"><a href="../../rohd/Module/parent.html">parent</a></li>
     <li class="inherited"><a href="../../rohd/Module/reserveDefinitionName.html">reserveDefinitionName</a></li>
     <li class="inherited"><a href="../../rohd/Module/reserveName.html">reserveName</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/runtimeType.html">runtimeType</a></li>
     <li class="inherited"><a href="../../rohd/Module/signals.html">signals</a></li>
     <li class="inherited"><a href="../../rohd/Module/subModules.html">subModules</a></li>
-    <li><a href="../../rohd/ExternalSystemVerilogModule/topModuleName.html">topModuleName</a></li>
     <li class="inherited"><a href="../../rohd/Module/uniqueInstanceName.html">uniqueInstanceName</a></li>
 
     <li class="section-title"><a href="../../rohd/ExternalSystemVerilogModule-class.html#instance-methods">Methods</a></li>
@@ -146,12 +145,12 @@ String instantiationVerilog(String instanceType, String instanceName,
     <li class="inherited"><a href="../../rohd/Module/isInput.html">isInput</a></li>
     <li class="inherited"><a href="../../rohd/Module/isOutput.html">isOutput</a></li>
     <li class="inherited"><a href="../../rohd/Module/isPort.html">isPort</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="../../rohd/Module/output.html">output</a></li>
     <li class="inherited"><a href="../../rohd/Module/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../../rohd/ExternalSystemVerilogModule-class.html#operators">Operators</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.17.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.18.3/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
 
@@ -168,7 +167,7 @@ String instantiationVerilog(String instanceType, String instanceName,
 <footer>
   <span class="no-break">
     rohd
-      0.3.1
+      0.4.0
   </span>
 
   
@@ -177,7 +176,7 @@ String instantiationVerilog(String instanceType, String instanceName,
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

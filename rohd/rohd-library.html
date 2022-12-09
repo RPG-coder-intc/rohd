@@ -392,6 +392,14 @@ boundaries.
   A pipeline that implements Ready/Valid protocol at each stage.
 </dd>
 
+        <dt id="ReplicationOp">
+  <span class="name "><a href="../rohd/ReplicationOp-class.html">ReplicationOp</a></span> 
+
+</dt>
+<dd>
+  A Replication Operator <a href="../rohd/Module-class.html">Module</a>.
+</dd>
+
         <dt id="RShift">
   <span class="name "><a href="../rohd/RShift-class.html">RShift</a></span> 
 
@@ -547,6 +555,16 @@ can be inlined within other SystemVerilog code.
       <h2>Extensions</h2>
 
       <dl>
+        <dt id="BigLogicValueBigIntUtilities">
+    <span class="name "><a href="../rohd/BigLogicValueBigIntUtilities.html">BigLogicValueBigIntUtilities</a></span> 
+
+</dt>
+<dd>
+    Extends <a href="https://api.dart.dev/stable/2.18.5/dart-core/BigInt-class.html">BigInt</a> with utility functions that are useful for dealing with
+large bit vectors and conversion between types.
+</dd>
+
+
         <dt id="LogicSwizzle">
     <span class="name "><a href="../rohd/LogicSwizzle.html">LogicSwizzle</a></span> 
 
@@ -575,14 +593,14 @@ can be inlined within other SystemVerilog code.
 
       <dl class="callables">
         <dt id="bin" class="callable">
-  <span class="name"><a href="../rohd/bin.html">bin</a></span><span class="signature">(<wbr><span class="parameter" id="bin-param-s"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">s</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.4/dart-core/int-class.html">int</a></span>
+  <span class="name"><a href="../rohd/bin.html">bin</a></span><span class="signature">(<wbr><span class="parameter" id="bin-param-s"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">s</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.18.5/dart-core/int-class.html">int</a></span>
   </span>
   
 
 </dt>
 <dd>
-  Converts a binary <a href="https://api.dart.dev/stable/2.18.4/dart-core/String-class.html">String</a> representation to a binary <a href="https://api.dart.dev/stable/2.18.4/dart-core/int-class.html">int</a>.
+  Converts a binary <a href="https://api.dart.dev/stable/2.18.5/dart-core/String-class.html">String</a> representation to a binary <a href="https://api.dart.dev/stable/2.18.5/dart-core/int-class.html">int</a>.
   
 
 </dd>
@@ -601,7 +619,7 @@ can be inlined within other SystemVerilog code.
 </dd>
 
         <dt id="rswizzle" class="callable">
-  <span class="name deprecated"><a class="deprecated" href="../rohd/rswizzle.html">rswizzle</a></span><span class="signature">(<wbr><span class="parameter" id="rswizzle-param-signals"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../rohd/Logic-class.html">Logic</a></span>&gt;</span></span> <span class="parameter-name">signals</span></span>)
+  <span class="name deprecated"><a class="deprecated" href="../rohd/rswizzle.html">rswizzle</a></span><span class="signature">(<wbr><span class="parameter" id="rswizzle-param-signals"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.5/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../rohd/Logic-class.html">Logic</a></span>&gt;</span></span> <span class="parameter-name">signals</span></span>)
     <span class="returntype parameter">&#8594; <a href="../rohd/Logic-class.html">Logic</a></span>
   </span>
   
@@ -610,12 +628,12 @@ can be inlined within other SystemVerilog code.
 <dd>
   Performs a concatenation operation on the list of signals, where index 0 of
 <code>signals</code> is the <em>least</em> significant bit(s).
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `List&lt;Logic&gt;.rswizzle()` instead&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `List&lt;Logic&gt;.rswizzle()` instead&#39;)</div>
 
 </dd>
 
         <dt id="swizzle" class="callable">
-  <span class="name deprecated"><a class="deprecated" href="../rohd/swizzle.html">swizzle</a></span><span class="signature">(<wbr><span class="parameter" id="swizzle-param-signals"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../rohd/Logic-class.html">Logic</a></span>&gt;</span></span> <span class="parameter-name">signals</span></span>)
+  <span class="name deprecated"><a class="deprecated" href="../rohd/swizzle.html">swizzle</a></span><span class="signature">(<wbr><span class="parameter" id="swizzle-param-signals"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.18.5/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../rohd/Logic-class.html">Logic</a></span>&gt;</span></span> <span class="parameter-name">signals</span></span>)
     <span class="returntype parameter">&#8594; <a href="../rohd/Logic-class.html">Logic</a></span>
   </span>
   
@@ -624,7 +642,7 @@ can be inlined within other SystemVerilog code.
 <dd>
   Performs a concatenation operation on the list of signals, where index 0 of
 <code>signals</code> is the <em>most</em> significant bit(s).
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `List&lt;Logic&gt;.swizzle()` instead&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `List&lt;Logic&gt;.swizzle()` instead&#39;)</div>
 
 </dd>
 
@@ -668,7 +686,7 @@ can be inlined within other SystemVerilog code.
 </dt>
 <dd>
   Deprecated: use <a href="../rohd/WaveDumper-class.html">WaveDumper</a> instead.
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use WaveDumper instead&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use WaveDumper instead&#39;)</div>
 
 </dd>
 
@@ -683,7 +701,7 @@ can be inlined within other SystemVerilog code.
 </dt>
 <dd>
   Deprecated - Use <a href="../rohd/ExternalSystemVerilogModule-class.html">ExternalSystemVerilogModule</a> instead.
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use ExternalSystemVerilogModule instead.&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use ExternalSystemVerilogModule instead.&#39;)</div>
 
 </dd>
 
@@ -698,7 +716,7 @@ can be inlined within other SystemVerilog code.
 </dt>
 <dd>
   Deprecated: use <a href="../rohd/Sequential-class.html">Sequential</a> instead.
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use Sequential instead&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use Sequential instead&#39;)</div>
 
 </dd>
 
@@ -728,7 +746,7 @@ can be inlined within other SystemVerilog code.
 </dt>
 <dd>
   Deprecated: use <a href="../rohd/LogicValue-class.html">LogicValue</a> instead.
-  <div class="features">@<a href="https://api.dart.dev/stable/2.18.4/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `LogicValue` instead.&#39; &#39;  `LogicValues` and `LogicValue` have been merged into one type.&#39;)</div>
+  <div class="features">@<a href="https://api.dart.dev/stable/2.18.5/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `LogicValue` instead.&#39; &#39;  `LogicValues` and `LogicValue` have been merged into one type.&#39;)</div>
 
 </dd>
 
@@ -805,6 +823,7 @@ can be inlined within other SystemVerilog code.
   <li><a href="../rohd/PipelineStageInfo-class.html">PipelineStageInfo</a></li>
   <li><a href="../rohd/Port-class.html">Port</a></li>
   <li><a href="../rohd/ReadyValidPipeline-class.html">ReadyValidPipeline</a></li>
+  <li><a href="../rohd/ReplicationOp-class.html">ReplicationOp</a></li>
   <li><a href="../rohd/RShift-class.html">RShift</a></li>
   <li><a href="../rohd/Sequential-class.html">Sequential</a></li>
   <li><a href="../rohd/SimpleClockGenerator-class.html">SimpleClockGenerator</a></li>
@@ -822,6 +841,7 @@ can be inlined within other SystemVerilog code.
   <li><a href="../rohd/XorUnary-class.html">XorUnary</a></li>
 
   <li class="section-title"><a href="../rohd/rohd-library.html#extensions">Extensions</a></li>
+  <li><a href="../rohd/BigLogicValueBigIntUtilities.html">BigLogicValueBigIntUtilities</a></li>
   <li><a href="../rohd/LogicSwizzle.html">LogicSwizzle</a></li>
   <li><a href="../rohd/LogicValueSwizzle.html">LogicValueSwizzle</a></li>
 
